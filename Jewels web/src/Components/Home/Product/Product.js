@@ -1,12 +1,21 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../Product/Product.css";
-import { Button, CardImg, Col, Container, List, Row } from "reactstrap";
+import { Button, CardImg, Col, Container, List, Row, Toast } from "reactstrap";
 import { FaShoppingCart, FaStar } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Product(props) {
   let stateRedux = useSelector((state) => state);
   let listProduct = stateRedux.productRedux.listProduct;
+
+  const handleClickShopping = () => {
+    toast.success("THÊM THÀNH CÔNG !", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+  };
+
   return (
     <>
       <Container
@@ -49,9 +58,13 @@ function Product(props) {
                   </List>
                 </Col>
                 <Col className="text-center">
-                  <Button className="button-shopping">
+                  <Button
+                    className="button-shopping"
+                    onClick={handleClickShopping}
+                  >
                     <FaShoppingCart className="shopping-icon" />
                     Thêm vào giỏ hàng
+                    <ToastContainer />
                   </Button>
                 </Col>
               </Col>
@@ -66,45 +79,3 @@ function Product(props) {
 }
 
 export default Product;
-
-{
-  /* <Col xs={3} className="top-20px">
-            <Col className="img-product ">
-              <CardImg
-                src={require("../../../Asset/Product/Product1.jpg")}
-                className="img-product"
-              />
-            </Col>
-            <Col>
-              <h4 className="text-center-title">DC Milky Way VN V2</h4>
-            </Col>
-            <Col>
-              <p className="text-center">Hãng sản xuất: PNJ</p>
-            </Col>
-            <Col className="float-left">
-              <List type="inline" className="text-center">
-                <ListInlineItem>
-                  <FaRegStar />
-                </ListInlineItem>
-                <ListInlineItem>
-                  <FaRegStar />
-                </ListInlineItem>
-                <ListInlineItem>
-                  <FaRegStar />
-                </ListInlineItem>
-                <ListInlineItem>
-                  <FaStar />
-                </ListInlineItem>
-                <ListInlineItem>
-                  <FaStar />
-                </ListInlineItem>
-              </List>
-            </Col>
-            <Col className="text-center">
-              <Button className="button-shopping">
-                <FaShoppingCart className="shopping-icon" />
-                Thêm vào giỏ hàng
-              </Button>
-            </Col>
-          </Col> */
-}

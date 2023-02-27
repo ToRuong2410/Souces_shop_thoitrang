@@ -13,7 +13,7 @@ function Menu(props) {
           <Navbar className="navbar-menu">
             <Nav className="nav-menu">
               <NavItem className="nav-item">
-                <NavLink className="navlink" href="/">
+                <NavLink className="navlink" to="/home">
                   HOME
                 </NavLink>
               </NavItem>

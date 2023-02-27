@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Button } from "reactstrap";
+import { Button, CardImg } from "reactstrap";
 
 function ResultFormItem(props) {
   let { onHandleDeleteProduct, onhandleShowEditProduct } = props;
@@ -38,7 +38,12 @@ function ResultFormItem(props) {
           <td>{product.info}</td>
           <td>{product.detail}</td>
           <td>{product.ratingStar}</td>
-          <td>{getImageName(product.imageName)}</td>
+          <td>
+            <CardImg
+              src={require(`../../Asset/Product/${product.imageName}`)}
+              style={{ width: "56px" }}
+            />
+          </td>
           <td>{product.manufacturerName}</td>
           <td>{product.categoryName}</td>
           <td>

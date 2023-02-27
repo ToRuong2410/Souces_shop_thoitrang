@@ -30,8 +30,10 @@
 }
 
 .button-shopping:hover {
-  background-color: #00bbff;
+  /* background-color: #00bbff; */
   border: none;
+  background: #00bbff;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .button-shopping > .shopping-icon {
@@ -56,3 +58,5 @@
   text-decoration: none;
   color: #000;
 }
+
+/* nút thông báo thêm thành công vào giỏ hàng */
